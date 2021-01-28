@@ -29,4 +29,4 @@ app.listen(process.env.PORT, () => {
 });
 
 
-app.use(require('./routes/index'));
+app.use(require('./controllers/index'));
