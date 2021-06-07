@@ -1,7 +1,8 @@
-require('./config/config');
+/*require('./config/config');
 
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors');
 
 const app = express()
 
@@ -11,6 +12,9 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
     // parse application/json
 app.use(bodyParser.json())
+
+// CORS
+app.use(cors());
 
 // DB Connection
 mongoose.connect(process.env.URLDB, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false }, (err, res) => {
@@ -29,4 +33,13 @@ app.listen(process.env.PORT, () => {
 });
 
 
-app.use(require('./controllers/index'));
+app.use(require('./controllers/index'));*/
+
+
+require('dotenv').config();
+
+const Server = require('./models/server');
+
+const server = new Server();
+
+server.listen();
